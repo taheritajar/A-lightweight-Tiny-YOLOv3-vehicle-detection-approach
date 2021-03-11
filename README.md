@@ -1,10 +1,9 @@
-# keras-yolo3
+# A-lightweight-Tiny-YOLOv3-vehicle-detection-approach
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 ## Introduction
 
-A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
+A Keras implementation of YOLOv3 (Tensorflow backend) for vehicle detection inspired by [qqwweee](https://github.com/qqwweee).
 
 
 ---
