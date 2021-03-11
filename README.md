@@ -17,8 +17,8 @@ A Keras implementation of YOLOv3 (Tensorflow backend) for vehicle detection insp
 ```
 wget https://pjreddie.com/media/files/yolov3.weights
 python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
-python yolo_video.py [OPTIONS...] --image, for image detection mode, OR
-python yolo_video.py [video_path] [output_path (optional)]
+python new_yolo_video_tiny.py [OPTIONS...] --image, for image detection mode, OR
+python new_yolo_video_tiny.py [video_path] [output_path (optional)]
 ```
 
 For Tiny YOLOv3, just do in a similar way, just specify model path and anchor path with `--model model_file` and `--anchors anchor_file`.
@@ -96,3 +96,5 @@ If you want to use original pretrained weights for YOLOv3:
 6. The training strategy is for reference only. Adjust it according to your dataset and your goal. And add further strategy if needed.
 
 7. For speeding up the training process with frozen layers train_bottleneck.py can be used. It will compute the bottleneck features of the frozen model first and then only trains the last layers. This makes training on CPU possible in a reasonable time. See [this](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for more information on bottleneck features.
+
+8. In order to use our changes for vehicle detection, we changed the "tiny_yolo_body" function in "yolov3/model_its.py". As mentioned in paper, we removed " DarknetConv2D_BN_Leaky(1024, (3,3))" in line 105,  "DarknetConv2D_BN_Leaky(128, (1,1))" (in line 112), and "  DarknetConv2D_BN_Leaky(256, (3,3))," (in line 116) for Trial5 and also removed "BatchNormalization()" (in line 31) for Trial2 to Trial5.
