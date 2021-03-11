@@ -1,0 +1,6 @@
+Sedan
+Suv
+Minivan
+Micribus
+Bus
+Truck
