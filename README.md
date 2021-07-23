@@ -98,3 +98,14 @@ If you want to use original pretrained weights for YOLOv3:
 7. For speeding up the training process with frozen layers train_bottleneck.py can be used. It will compute the bottleneck features of the frozen model first and then only trains the last layers. This makes training on CPU possible in a reasonable time. See [this](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for more information on bottleneck features.
 
 8. In order to use our changes for vehicle detection, we changed the "tiny_yolo_body" function in "yolov3/model_its.py". As mentioned in paper, we removed " DarknetConv2D_BN_Leaky(1024, (3,3))" in line 105,  "DarknetConv2D_BN_Leaky(128, (1,1))" (in line 112), and "  DarknetConv2D_BN_Leaky(256, (3,3))," (in line 116) for Trial5 and also removed "BatchNormalization()" (in line 31) for Trial2 to Trial5.
+
+# Citation
+
+@article{tajar2021lightweight,
+  title={A lightweight Tiny-YOLOv3 vehicle detection approach},
+  author={Tajar, Alireza Taheri and Ramazani, Abbas and Mansoorizadeh, Muharram},
+  journal={Journal of Real-Time Image Processing},
+  pages={1--13},
+  year={2021},
+  publisher={Springer}
+}
